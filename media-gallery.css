@@ -1,0 +1,156 @@
+/* Galleries share controls and typography, while keeping their distinct media proportions. */
+body .media-rail{position:relative;padding-inline:48px;min-width:0;max-width:100%}
+body .media-rail .media-track{display:flex!important;gap:22px!important;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;padding:9px 3px 15px!important;align-items:stretch;scrollbar-width:thin;scrollbar-color:#a38b9b transparent;touch-action:pan-x pan-y;min-width:0;width:100%;border:0}
+body .media-rail .media-track>*{scroll-snap-align:start;scroll-snap-stop:normal;flex-shrink:0}
+body .media-rail .rail-arrow{position:absolute;top:calc(50% - 30px);z-index:2;width:40px;height:48px;min-height:44px;padding:0;border:1px solid #b29cab;border-radius:24px;background:#faf6f1;color:#4a2943;font:400 23px/1 Arial,sans-serif;display:grid;place-items:center;cursor:pointer;box-shadow:none}
+body .media-rail .rail-prev{left:0}body .media-rail .rail-next{right:0}
+body .media-rail .rail-arrow:disabled{opacity:.28;cursor:default}
+body .media-rail.is-short .rail-arrow{visibility:hidden}
+body .media-rail :is(button,.media-track):focus-visible,body .mixed-review-grid button:focus-visible{outline:3px solid #4a2943;outline-offset:3px}
+/* Diploma previews keep the previous document size, without individual actions. */
+body .credential-gallery .credential-preview{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:auto;min-width:230px;max-width:440px;height:352px;padding:16px;background:#fffcf88f;border:1px solid #d3c7cd;border-radius:4px;cursor:default}
+body .credential-gallery .credentials-strip .credential-preview img{display:block;width:auto!important;height:auto!important;max-width:100%!important;max-height:282px!important;object-fit:contain!important;filter:none!important;opacity:1!important;pointer-events:none;user-select:none;-webkit-user-drag:none}
+/* Equal-height independent cards; the complete screenshot opens on demand. */
+body .media-rail .text-review-grid>.screenshot-slot,body .mixed-review-grid>.screenshot-slot{display:flex!important;flex-direction:column;align-items:stretch;width:clamp(260px,27vw,350px);height:430px!important;min-height:0!important;aspect-ratio:auto!important;padding:13px!important;background:#fffdfa!important;color:#4a2943;border:1px solid #d7cbd2!important;border-radius:5px!important;overflow:hidden!important;cursor:pointer;box-shadow:0 3px 12px #4a294307}
+body .media-rail .text-review-grid .screenshot-slot img,body .mixed-review-grid>.screenshot-slot img{display:block!important;flex:1 1 0;min-height:0;width:100%!important;height:100%!important;max-height:none!important;object-fit:cover!important;object-position:top!important;opacity:1!important;filter:none!important;border-radius:0}
+body .media-rail .text-review-grid .review-zoom,body .mixed-review-grid .review-zoom{position:static!important;display:block;flex:0 0 auto;width:auto!important;height:auto!important;min-height:0!important;border-radius:0!important;margin-top:12px;padding:0;font:600 13px/1.5 Manrope,Arial,sans-serif;background:none!important;color:#4a2943!important;border:0!important;text-align:left}
+/* Square local derivatives play directly inside the circle. No crop calculations. */
+body .media-rail .review-video-grid>.round-review{flex:0 0 clamp(230px,27vw,340px);width:clamp(230px,27vw,340px);max-width:340px;margin:0;align-self:center}
+body .round-review-frame{position:relative;width:85%;margin-inline:auto;aspect-ratio:1;overflow:hidden;border-radius:50%;background:#e5d9df;box-shadow:0 0 0 4px #fffcf8,0 0 0 5px #c6b4bf}
+body .main .round-review .round-review-frame video,body .subpage .round-review .round-review-frame video{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-width:0!important;max-width:none!important;max-height:none!important;object-fit:cover!important;object-position:50% 50%!important;border-radius:0!important;aspect-ratio:1!important;margin:0!important;display:block;transform:none!important}
+body .round-review .round-play{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;border-radius:50%;display:grid;place-items:center;background:transparent;color:#fffaf6;cursor:pointer}
+body .round-review .round-play span{display:grid;place-items:center;width:58px;height:58px;border:1px solid #ffffffa6;border-radius:50%;background:#4a2943c9;font:400 23px/1 Arial,sans-serif;padding-left:3px;box-shadow:0 2px 12px #0003;opacity:1}
+body .round-review.is-playing .round-play span{width:44px;height:44px;font-size:19px;opacity:.8;align-self:end;margin-bottom:16px;padding-left:0}
+body .round-review .round-play:hover span,body .round-review .round-play:focus-visible span{opacity:1;background:#4a2943}
+body .round-review .clip-error{position:absolute;inset:60% 12% auto;font-size:12px;text-align:center;color:white;background:#4a2943db;border-radius:4px;pointer-events:none}
+body .round-review .clip-error:empty{display:none}
+body .mixed-review-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px 24px;align-items:center;margin-top:28px}
+body .mixed-review-grid>.screenshot-slot{width:100%;max-width:none}
+body .mixed-review-grid>.round-review{width:100%;max-width:340px;justify-self:center;padding:7px}
+/* The complete confirmed cover is visible, and its action sits below the picture. */
+body .main #HM_SESSION .intro-frame.has-film-poster{aspect-ratio:auto;height:auto;overflow:hidden;background:#f9f4ed;border-radius:4px}
+body .main #HM_SESSION .intro-frame.has-film-poster .session-poster{display:block;width:100%;height:auto;max-height:none;object-fit:contain;margin:0}
+body .main #HM_SESSION .intro-frame.has-film-poster .intro-play{position:static;display:flex;flex-direction:row;gap:12px;width:100%;height:auto;min-height:58px;padding:12px 18px;border:1px solid #a4899a;border-top:0;border-radius:0;background:#f9f4ed;color:#4a2943;font:600 15px/1.4 Manrope,Arial,sans-serif;text-shadow:none}
+body .main #HM_SESSION .intro-frame.has-film-poster .play-symbol{width:30px;height:30px;min-width:30px;padding-left:2px;border:1px solid #a4899a;background:#4a2943;color:#fff;font-size:12px}
+body .intro-local-frame{position:relative}
+body .intro-local-frame video{display:block;width:100%;height:auto}
+body .intro-local-play{position:absolute;inset:0 0 50px;width:100%;height:calc(100% - 50px);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;border:0;background:#1c2d2345;color:#fff;font:600 20px/1.4 Manrope,Arial,sans-serif;text-shadow:0 1px 5px #000;cursor:pointer}
+body .intro-local-play[hidden]{display:none}
+body .intro-local-frame.has-film-poster .intro-local-play{inset:0;height:100%;padding:0;background:transparent}
+body .intro-local-frame .intro-local-play:focus-visible .play-symbol{outline:3px solid #fff;outline-offset:5px}
+body .intro-local-play .play-symbol{display:grid;place-items:center;width:76px;height:76px;border:1px solid #fff;border-radius:50%;background:#4a2943b0;font-size:28px}
+@media(max-width:900px){body .mixed-review-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){
+ body .media-rail{padding-inline:33px}
+ body .media-rail .media-track{gap:16px!important;padding-inline:2px!important}
+ body .media-rail .rail-arrow{width:28px;height:44px;font-size:20px}
+ body .credential-gallery .credential-preview{height:320px;min-width:220px;max-width:310px;padding:14px}
+ body .credential-gallery .credentials-strip .credential-preview img{max-height:250px!important}
+ body .media-rail .text-review-grid>.screenshot-slot{width:clamp(225px,72vw,320px);height:420px!important}
+ body .media-rail .review-video-grid>.round-review{flex-basis:clamp(205px,67vw,290px);width:clamp(205px,67vw,290px)}
+ body .mixed-review-grid{gap:24px;grid-template-columns:1fr}
+ body .mixed-review-grid>.screenshot-slot{height:440px!important;max-width:400px;justify-self:center}
+ body .mixed-review-grid>.round-review{max-width:300px}
+ body .intro-local-play{font-size:17px}
+ body .main #HM_SESSION .intro-frame.has-film-poster .intro-play{font-size:14px;padding:12px}
+}
+@media(prefers-reduced-motion:reduce){body .media-rail .media-track{scroll-behavior:auto!important}body .round-play span{transition:none!important}}
+/* Cancel inherited gallery max-width and image flex bases from the prototype. */
+body .media-rail .media-track{max-width:none!important}
+body .credential-gallery .credential-preview{width:clamp(230px,calc(var(--doc-ratio,1) * 282px + 32px),440px)}
+body .credential-gallery .credentials-strip .credential-preview img{flex:0 0 auto!important}
+@media(max-width:600px){body .credential-gallery .credential-preview{width:clamp(220px,calc(var(--doc-ratio,1) * 250px + 28px),310px)}}
+/* Reserve the full image box before lazy loading, so previews never collapse to zero. */
+body .credential-gallery .credentials-strip .credential-preview img{width:100%!important;height:282px!important;min-width:0;flex:1 1 auto!important}
+@media(max-width:600px){body .credential-gallery .credentials-strip .credential-preview img{height:250px!important}}
+/* The session film also appears on H23 / SE05, with the same complete cover. */
+body .subpage .intro-frame.has-film-poster{aspect-ratio:auto;height:auto;overflow:hidden;background:#f9f4ed;border-radius:4px}
+body .subpage .intro-frame.has-film-poster .session-poster{display:block;width:100%;height:auto;max-height:none;object-fit:contain;margin:0}
+body .subpage .intro-frame.has-film-poster .intro-play{position:static;display:flex;flex-direction:row;gap:12px;width:100%;height:auto;min-height:58px;padding:12px 18px;border:1px solid #a4899a;border-top:0;border-radius:0;background:#f9f4ed;color:#4a2943;font:600 15px/1.4 Manrope,Arial,sans-serif;text-shadow:none}
+body .subpage .intro-frame.has-film-poster .play-symbol{width:30px;height:30px;min-width:30px;padding-left:2px;border:1px solid #a4899a;background:#4a2943;color:#fff;font-size:12px}
+body .subpage .intro-frame:not(.has-film-poster){width:100%;height:auto;aspect-ratio:16/9}
+body .subpage .intro-frame iframe{display:block;width:100%;height:100%;border:0}
+body .media-rail .rail-arrow{top:calc(50% - 3px);transform:translateY(-50%)}
+@media(max-width:600px){body .subpage .intro-frame.has-film-poster .intro-play{font-size:14px;padding:12px}}
+/* 17.1-RAILS: whole cards use the entire available width at every resting point. */
+body .media-rail{--rail-visible:1;--rail-gap:24px;padding-inline:0;container-type:inline-size}
+body .media-rail .media-track{display:grid!important;grid-auto-flow:column;grid-auto-columns:calc((100% - (var(--rail-visible) - 1)*var(--rail-gap))/var(--rail-visible));grid-template-columns:none!important;gap:var(--rail-gap)!important;padding:0!important;width:100%;max-width:none!important;align-items:stretch;scroll-snap-type:x mandatory;scroll-padding:0;scrollbar-width:none;touch-action:pan-x pan-y}
+body .media-rail .media-track::-webkit-scrollbar{display:none}
+body .media-rail .media-track>*{scroll-snap-align:start;scroll-snap-stop:always;min-width:0;box-sizing:border-box}
+body .media-rail .rail-arrow{top:50%;transform:translateY(-50%);width:44px;height:44px;min-height:44px;border-radius:50%;border:1px solid #ad929f;background:#fffaf5ed;color:#4a2943;font-size:24px;box-shadow:0 2px 12px #4a294319}
+body .media-rail .rail-prev{left:6px}body .media-rail .rail-next{right:6px}
+body .media-rail .rail-arrow:disabled{opacity:.28;pointer-events:none}
+/* Arrows sit in reserved margins of the edge cards, clear of the documents. */
+body .credential-gallery .credential-preview{width:100%;min-width:0;max-width:none;height:360px;padding:20px 54px;display:flex;align-items:center;justify-content:center;background:#fffcf8;border:1px solid #d3c7cd;border-radius:4px}
+body .credential-gallery .credentials-strip .credential-preview img{width:100%!important;height:282px!important;max-height:282px!important;max-width:100%!important;flex:1 1 auto!important;object-fit:contain!important}
+/* Each review can be read directly; the image keeps every row in a vertical viewport. */
+body .media-rail.text-rail .rail-arrow{top:28px;transform:translateY(-50%);box-shadow:none}
+body .media-rail .text-review-grid>.screenshot-slot,body .mixed-review-grid>.screenshot-slot{display:block!important;width:100%;max-width:none;height:560px!important;min-height:0!important;padding:56px 14px 14px!important;border:1px solid #d7cbd2!important;border-radius:5px!important;background:#fffdfa!important;overflow:hidden!important;cursor:auto;box-shadow:0 3px 12px #4a294307}
+body .screenshot-slot .screenshot-read{width:100%;height:100%;overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:contain;scrollbar-width:thin;scrollbar-color:#a78b9b #f3ecef;touch-action:pan-x pan-y;outline-offset:-3px}
+body .media-rail .text-review-grid .screenshot-slot .screenshot-read img,body .mixed-review-grid>.screenshot-slot .screenshot-read img{display:block!important;flex:none;width:100%!important;height:auto!important;max-height:none!important;min-height:0;object-fit:contain!important;object-position:top!important;border-radius:0;margin:0}
+body .screenshot-slot .screenshot-read:focus-visible{outline:3px solid #4a2943}
+body .mixed-review-grid>.screenshot-slot{padding-top:14px!important}
+body .mixed-review-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:center}
+body .media-rail .review-video-grid>.round-review{width:100%;max-width:none;flex:none;align-self:center;padding:6px}
+body .media-rail .round-review-frame{box-shadow:0 0 0 3px #fffcf8,0 0 0 4px #c6b4bf}
+/* The confirmed session image remains complete, with one central play control. */
+body .main #HM_SESSION .intro-frame.has-film-poster,body .subpage .intro-frame.has-film-poster{position:relative;width:100%;height:auto;aspect-ratio:auto;overflow:hidden}
+body .main #HM_SESSION .intro-frame.has-film-poster .intro-play,body .subpage .intro-frame.has-film-poster .intro-play{position:absolute;inset:0;display:grid;place-items:center;width:100%;height:100%;min-height:0;padding:0;border:0;background:transparent;color:#fff;box-shadow:none;border-radius:0}
+body .main #HM_SESSION .intro-frame.has-film-poster .play-symbol,body .subpage .intro-frame.has-film-poster .play-symbol{display:grid;place-items:center;width:70px;height:70px;min-width:0;padding-left:4px;border:1px solid #fffcf8cc;border-radius:50%;background:#4a2943df;color:#fffaf5;font:400 26px/1 Arial,sans-serif;box-shadow:0 3px 20px #0003}
+body .main #HM_SESSION .intro-frame.has-film-poster .intro-play:hover .play-symbol,body .subpage .intro-frame.has-film-poster .intro-play:hover .play-symbol{background:#4a2943}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:600px){
+ body .media-rail{--rail-gap:14px}
+ body .media-rail .media-track{gap:var(--rail-gap)!important;padding:0!important}
+ body .media-rail .rail-arrow{width:44px;height:44px;font-size:23px}
+ body .credential-gallery .credential-preview{width:100%;min-width:0;max-width:none;height:340px;padding:18px 50px}
+ body .credential-gallery .credentials-strip .credential-preview img{height:282px!important;max-height:282px!important}
+ body .media-rail .text-review-grid>.screenshot-slot{width:100%;height:560px!important;padding:56px 12px 12px!important}
+ body .media-rail .review-video-grid>.round-review{width:100%;max-width:none;flex:none;padding:5px}
+ body .mixed-review-grid{grid-template-columns:1fr;gap:24px}
+ body .mixed-review-grid>.screenshot-slot{height:560px!important;padding:12px!important;max-width:none}
+ body .main #HM_SESSION .intro-frame.has-film-poster .play-symbol,body .subpage .intro-frame.has-film-poster .play-symbol{width:56px;height:56px;font-size:22px}
+}
+/* Documents get the full width of two generous cells at 1104px, three on wide screens. */
+body .credential-gallery .credential-preview{padding:10px;min-width:0;max-width:none;width:100%}
+body .media-rail.credential-rail .rail-arrow{top:auto;bottom:8px;transform:none}
+body .media-rail.credential-rail .rail-prev{left:8px}
+body .media-rail.credential-rail .rail-next{right:8px}
+@media(max-width:600px){body .credential-gallery .credential-preview{padding:10px;min-width:0;max-width:none;width:100%}}
+/* Optional enlargement keeps inline reading as the default. */
+body .media-rail .text-review-grid>.screenshot-slot,body .mixed-review-grid>.screenshot-slot{position:relative;padding-top:56px!important}
+body .credential-gallery .credentials-strip .credential-preview img{height:320px!important;max-height:320px!important}
+@media(max-width:600px){
+ body .media-rail .text-review-grid>.screenshot-slot,body .mixed-review-grid>.screenshot-slot{padding-top:56px!important}
+ body .credential-gallery .credentials-strip .credential-preview img{height:320px!important;max-height:320px!important}
+}
+/* Mari's 17.2 decision: three compact, complete documents on the green section. */
+body .credential-gallery .credential-preview{height:340px;padding:0 3px;background:transparent;border:0;border-radius:0;box-shadow:none}
+body .credential-gallery .credentials-strip .credential-preview img{height:330px!important;max-height:330px!important;filter:none!important;box-shadow:none!important;background:transparent}
+body .media-rail.credential-rail{--rail-gap:14px}
+body .media-rail .rail-arrow,body .media-rail.text-rail .rail-arrow,body .media-rail.credential-rail .rail-arrow{top:50%;bottom:auto;transform:translateY(-50%);width:44px;height:44px;border-color:#9b7f90;background:#fffaf5f5;box-shadow:0 2px 12px #35232b24}
+body .media-rail .rail-prev,body .media-rail.credential-rail .rail-prev{left:-18px}
+body .media-rail .rail-next,body .media-rail.credential-rail .rail-next{right:-18px}
+/* The outside arrows overlap only the card border and its reserved inner margin. */
+body .media-rail .text-review-grid>.screenshot-slot,body .mixed-review-grid>.screenshot-slot{height:clamp(370px,38vw,455px)!important}
+body .media-rail .text-review-grid>.screenshot-slot,body .mixed-review-grid>.screenshot-slot{padding:14px 28px!important}
+body .main #HM_SESSION .intro-frame.has-film-poster .play-symbol,body .subpage .intro-frame.has-film-poster .play-symbol{background:#4a2943d9;border:1px solid #fffaf5e8;box-shadow:0 0 0 8px #fffaf521,0 4px 18px #21131e38}
+@keyframes session-play-breathe{0%,100%{box-shadow:0 0 0 6px #fffaf529,0 4px 18px #21131e38}50%{box-shadow:0 0 0 13px #fffaf50a,0 4px 18px #21131e38}}
+@media(prefers-reduced-motion:no-preference){body .has-film-poster .play-symbol{animation:session-play-breathe 2.8s ease-in-out infinite}}
+@media(prefers-reduced-motion:reduce){body .has-film-poster .play-symbol{animation:none!important}}
+@media(max-width:600px){
+ body .credential-gallery .credential-preview{height:340px;padding:0 3px;background:transparent;border:0}
+ body .credential-gallery .credentials-strip .credential-preview img{height:330px!important;max-height:330px!important}
+ body .media-rail .text-review-grid>.screenshot-slot,body .mixed-review-grid>.screenshot-slot{padding:14px 28px!important}
+ body .media-rail .rail-prev,body .media-rail.credential-rail .rail-prev{left:-16px}
+ body .media-rail .rail-next,body .media-rail.credential-rail .rail-next{right:-16px}
+}
+
+/* IRPT documents: complete images share an actual height; page capacity follows their aspect ratios. */
+body .credential-gallery .media-rail.credential-rail{padding-inline:28px;--credential-height:330px;--rail-gap:14px}
+body .credential-gallery .credential-rail .credentials-strip{display:flex!important;gap:var(--rail-gap)!important;align-items:stretch;height:var(--credential-height);padding:0!important;scroll-snap-type:x mandatory}
+body .credential-gallery .credential-rail .credentials-strip>.credential-page{display:flex;flex:0 0 100%;width:100%;min-width:0;height:var(--credential-height);gap:var(--rail-gap);align-items:center;justify-content:center;scroll-snap-align:start;scroll-snap-stop:always}
+body .credential-gallery .credential-page .credential-preview{display:block;flex:0 0 auto;min-width:0;max-width:none;height:var(--credential-height);padding:0;background:transparent;border:0;border-radius:0;box-shadow:none;scroll-snap-align:none!important;cursor:default}
+body .credential-gallery .credentials-strip .credential-page .credential-preview img{display:block;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;min-width:0;flex:none!important;object-fit:contain!important;border:0;border-radius:0;background:transparent;box-shadow:none!important;scroll-snap-align:none!important;filter:none!important;opacity:1!important;pointer-events:none;user-select:none;-webkit-user-drag:none}
+body .credential-gallery .media-rail.credential-rail .rail-arrow{top:50%;bottom:auto;transform:translateY(-50%)}
+@media(max-width:600px){body .credential-gallery .media-rail.credential-rail{padding-inline:24px}}

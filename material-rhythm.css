@@ -1,0 +1,232 @@
+@font-face {
+  font-family:"Bad Script";src:url("assets/fonts/BadScript.ttf") format("truetype");
+  font-weight:400;font-style:normal;font-display:swap;
+}
+/* Палитра утверждённого визуального брендбука, этап 11. */
+body.concept-mari {
+  --sage-stone: url("assets/materials/marble-sage.webp");
+  --sage-shade: linear-gradient(105deg,#243d31a3,#2d4538a3);
+  --plum: #4a2943; --ink: #25262b; --terracotta: #c97c69;
+  --terracotta-hover: #cf8977; --copper-line: #aa6556; --paper: #f9f4ed;
+}
+body.concept-mari #HM01 .principles {
+  background: linear-gradient(104deg,#35203199,#4a294375 48%,#493a4055),url("assets/materials/min-principles.webp") center 56%/cover;
+  border-color: #765e6a;
+}
+body.concept-mari #HM01 .principles li {border-color:#ad8f9c}
+body.concept-mari #HM01 .principles strong {color:#fff9ef}
+body.concept-mari #HM01 .principles span {color:#f9eee7}
+body.concept-mari #HM01 .principles svg {
+  width:clamp(30px,3.1vw,48px);height:auto;flex:none;color:var(--terracotta);
+}
+body.concept-mari #HM01 .hero-inscription {display:none}
+@media (max-width:680px) {
+  body.concept-mari #HM01 .hero-inscription {
+    position:absolute;inset:0 0 auto;z-index:1;aspect-ratio:1672/941;
+    display:flex;align-items:center;padding-left:6%;pointer-events:none;
+  }
+  body.concept-mari #HM01 .inscription-art {
+    display:block;width:min(39%,210px);height:auto;transform:rotate(-5deg);
+    filter:brightness(0) saturate(100%) invert(19%) sepia(23%) saturate(910%) hue-rotate(262deg) brightness(93%);
+  }
+}
+@media (min-width:960px) {
+  body.concept-mari #HM01 .mari-hero {--photo-shift:clamp(78px,8.6vw,148px)}
+  body.concept-mari #HM01 .portrait-wrap {container-type:size}
+  body.concept-mari #HM01 .portrait-wrap img {
+    right:var(--photo-shift);
+    mask-image:linear-gradient(to right,transparent,#000 24%,#000 98%,transparent);
+  }
+  body.concept-mari #HM01 .portrait-wrap::before {
+    content:"";position:absolute;inset:0 0 0 auto;width:calc(var(--photo-shift) + 3.5cqh);
+    background:url("assets/hero-wall.webp") center bottom / 100% 131% no-repeat;
+  }
+  body.concept-mari #HM01 .hero-inscription {
+    display:block;position:absolute;z-index:1;container-type:size;
+    inset:0 0 0 auto;width:28%;pointer-events:none;
+    background:linear-gradient(90deg,transparent,#342d2940 32%,#342d298c);
+  }
+  body.concept-mari #HM01 .inscription-art {
+    position:absolute;top:17%;right:calc((var(--photo-shift) + 31cqh)/2);
+    width:clamp(150px,15.8vw,245px);height:auto;max-width:none;
+    transform:translateX(50%) rotate(-5deg);filter:drop-shadow(0 1px 2px #2b24209c);
+  }
+}
+
+/* Одна фотография камня на всей сетке. Кремовая окантовка открывает промежутки. */
+body.concept-mari .main #HM02 .home-topic-grid {
+  --mosaic-gap:14px;
+  gap:var(--mosaic-gap);
+  overflow:visible;
+  background:var(--paper);
+  border-radius:4px;
+}
+body.concept-mari .main #HM02 .home-topic-grid>.topic-card:nth-child(n) {
+  position:relative;
+  z-index:1;
+  background-color:#465548;
+  background-image:var(--sage-shade),var(--sage-stone);
+  background-size:100% 100%,300% 300%;
+  background-position:center,var(--tile-x) var(--tile-y);
+  background-blend-mode:normal;
+  box-shadow:none;
+  border:1px solid rgb(80 95 83 / 45%);
+  color:var(--paper);
+}
+body.concept-mari .main #HM02 .home-topic-grid>.topic-card:nth-child(n+8) {
+  background-image:linear-gradient(105deg,#21392da8,#2b4335ad),var(--sage-stone);
+}
+body.concept-mari .main #HM02 .home-topic-grid>.topic-card:focus-visible {
+  outline:2px solid var(--plum);outline-offset:3px;
+}
+@media(hover:hover) and (prefers-reduced-motion:no-preference) {
+  body.concept-mari .main #HM02 .home-topic-grid>.topic-card:hover {transform:translateY(-3px)}
+}
+body.concept-mari .main #HM02 .home-topic-grid>.topic-card:is(:hover,:focus-visible)::after {
+  transform:none;
+}
+@media(max-width:680px) {
+  body.concept-mari .main #HM02 .home-topic-grid {--mosaic-gap:12px}
+  body.concept-mari .main #HM02 .home-topic-grid>.topic-card:nth-child(n) {background-size:100% 100%,100% 900%}
+}
+body.concept-mari .main #HM02 .home-topic-grid>.topic-card span,
+body.concept-mari .main #HM02 .home-topic-grid>.topic-card::after {color:var(--paper)}
+/* Светлые разделы объединяет одна ровная поверхность из брендбука. */
+body.concept-mari .main :is(
+  #HM02, #HM03, #HM07_VIDEO, #HM_WHY, #HM_SESSION,
+  #HM_CREDENTIALS, #HM07_TEXT, #HM10
+) {
+  background: var(--paper);
+  color: var(--ink);
+}
+body.concept-mari .main #HM03::before,body.concept-mari .main #HM04::before {content:none;display:none}
+body.concept-mari #app .main #HM03 .about-copy :is(h2,p,a) {color:var(--ink)}
+body.concept-mari #app .main #HM03 .about-copy h2 {color:var(--plum)}
+body.concept-mari .main #HM04 {
+  background:linear-gradient(64deg,transparent 12%,#261c2b30 19%,transparent 28%),linear-gradient(108deg,#4a294381,#41253e93 60%,#3c38468a),url("assets/materials/marble-plum.webp") center 45%/cover;
+}
+body.concept-mari #app .main #HM04 h2,
+body.concept-mari #app .main #HM04 .step:nth-child(n) :is(h3,p,b) {color:#fff8ee}
+body.concept-mari #app #HM04 .step:nth-child(n) {
+  background:linear-gradient(160deg,#43253963,#4a294352);border-color:#d7bfc376;box-shadow:none;
+}
+
+body.concept-mari #app :is(#HM07_VIDEO,#HM07_TEXT) .media-rail + .button {margin-top:clamp(24px,3vw,42px)}
+body.concept-mari #app #HM07_VIDEO :is(h2,p) {color:var(--plum)}
+body.concept-mari .main #HM08 {
+  background: linear-gradient(115deg, #232d2a 2%, #47564d 34%, #758276 70%, #4d5d54 96%),
+              url("assets/materials/min-questions.webp") center / cover;
+  background-blend-mode: multiply;
+  color: var(--paper);
+}
+body.concept-mari #app .main #HM08 :is(h2,h3,summary,p) {color:#fff9ef}
+
+body.concept-mari #HM08 .faq details {border-color:#e2d6ca80}
+
+body.concept-mari .main #HM_WHY {
+  padding-block:clamp(34px,4vw,54px);
+}
+body.concept-mari #app .main #HM_WHY :is(h2,h3,p) {color:#312531}
+
+body.concept-mari .main #HM11 {background:var(--paper);border-block:0}
+body.concept-mari #app .main #HM11 .appeal {
+  background: linear-gradient(112deg, #4a2943e8, #58394fcb 39%, #71596a9e 71%, #4a2943bb),
+              url("assets/materials/min-message.webp") center 52% / cover;
+
+  border-color: #c7afbc;
+}
+body.concept-mari #app .main #HM11 .appeal :is(h2,p) {color:var(--paper)}
+body.concept-mari #app #HM_SESSION :is(h2,h3,p) {color:#352935}
+
+body.concept-mari .main #HM05 {
+  background: linear-gradient(112deg, #435247, #737f6d 46%, #425447 82%, #34453e),
+              url("assets/materials/min-methods.webp") center 45% / cover;
+  background-blend-mode: multiply;
+  color: #fff9ef;
+}
+body.concept-mari #app .main #HM05 :is(h2,h3,p) {color:#fff9ef}
+body.concept-mari #HM05 .method {border-color:#e4d0ba77}
+body.concept-mari #HM05 .method:is(:hover,:focus-within) {background:#f9f4ed11}
+body.concept-mari #app #HM_CREDENTIALS h2 {color:var(--plum)}
+body.concept-mari .main #HM06 {
+  background:linear-gradient(76deg,#4a29438c,#52364c7d 44%,#62475752 73%,#46394566),url("assets/materials/min-prices.webp") center 49%/cover;
+}
+body.concept-mari .format-table thead th {background:linear-gradient(115deg,#4a2943,#765e6a);color:#fff}
+
+body.concept-mari #HM07_TEXT .media-rail .text-review-grid > .screenshot-slot {
+  padding:0 9px !important;
+}
+body.concept-mari #HM07_TEXT .screenshot-read {
+  scrollbar-gutter:stable;
+}
+
+body.concept-mari .main #HM09 {
+  background: var(--sage-shade), var(--sage-stone) center / cover;
+  background-color:#465548;
+}
+body.concept-mari #app #HM09 h2 {color:var(--paper)}
+body.concept-mari #app .main #HM10 :is(h2,h3) {color:var(--plum)}
+body.concept-mari #app .main #HM10 p {color:var(--ink)}
+body.concept-mari #app .main #HM10 .article-preview {border-color:#cbbbae}
+body.concept-mari #app .footer {
+  background: linear-gradient(108deg, #3a2236e8 5%, #52354bc2 40%, #765e6a99 70%, #4a2943bb),
+              url("assets/materials/min-publications.webp") center 60% / cover;
+  border-top:1px solid #765e6a;
+}
+body.concept-mari #app .footer #HM12 {background:transparent;border:1px solid #c97c69;border-radius:8px;padding:16px 20px;box-shadow:none;align-self:start}
+body.concept-mari #app .footer :is(h2,p,a,.small),
+body.concept-mari #app .footer #HM12 :is(h2,p,a,.small) { color: #f6ecdf; }
+body.concept-mari #app .footer #HM12 h2 { font: 600 26px/1.14 "Cormorant Garamond",Georgia,serif; margin-bottom: .55em; }
+body.concept-mari #app .footer #HM12 .footer-socials { display: grid; justify-items: start; gap: 0; margin: 0 0 8px; }
+body.concept-mari #app .footer #HM12 .footer-socials .social-link {
+  display: inline-flex; align-items: center; justify-content: flex-start; gap: 8px;
+  min-height: 40px; width: auto; padding: 3px 0; border: 0; border-radius: 0;
+  background: transparent; box-shadow: none; font: inherit; text-decoration: underline;
+  text-underline-offset: 4px; text-decoration-color: #beaa96;
+}
+body.concept-mari #app .footer #HM12 .small { color: #dfdccd; }
+
+
+/* Section navigation uses an outline; form triggers carry the filled brand accent. */
+body.concept-mari #app .main .section .button.quiet {
+  --button-edge:var(--copper-line);--button-label:#412c37;--button-surface:transparent;
+  display:inline-flex;align-items:center;justify-content:center;width:fit-content;min-height:44px;
+  max-width:100%;border:1px solid var(--button-edge);border-radius:8px;background:transparent;
+  color:var(--button-label);padding:9px 17px;text-decoration:none;text-align:center;
+  font:600 14px/1.4 Manrope,Arial,sans-serif;
+}
+body.concept-mari #app .main :is(#HM04,#HM05,#HM06,#HM08) a.button.quiet {
+  --button-label:#fff9ef;--button-edge:#e4ae94;color:var(--button-label);border-color:var(--button-edge);
+}
+body.concept-mari #app .main #HM10 .article-preview a.article-read {color:var(--plum)}
+body.concept-mari #app .main #HM05 .method a.button {max-width:100%;justify-self:start}
+body.concept-mari #app .main .section :is(button.primary,button[data-form]),
+body.concept-mari #app .main :is(.about-actions,.session-reading) a.primary[data-form],
+body.concept-mari #app .main :is(#HM01,#HM06,#HM11) .primary,
+body.concept-mari #app .site-header .header-book,
+body.concept-mari #flow-dialog button.primary {
+  --button-surface:var(--terracotta);--button-edge:var(--terracotta);--button-label:#25262b;
+  background:var(--button-surface);border:1px solid var(--button-edge);border-radius:8px;color:var(--button-label);
+}
+body.concept-mari #app .main :is(.about-actions,.session-reading) {
+  display:flex;align-items:center;flex-wrap:wrap;gap:12px;
+}
+body.concept-mari #app .main .session-reading {justify-content:center}
+body.concept-mari #app .main :is(.about-actions,.session-reading) > .button {margin:0}
+@media(hover:hover) {
+  body.concept-mari #app .main .section .button.quiet:hover {box-shadow:inset 0 0 0 1px currentColor}
+  body.concept-mari #app :is(button.primary,.header-book):hover {background:var(--terracotta-hover)}
+}
+
+body.concept-mari #HM_SESSION > .inside > p.meeting-location {
+  width:fit-content;
+  max-width:100%;
+  box-sizing:border-box;
+  margin:0 auto 16px;
+  padding:10px clamp(12px,2vw,22px);
+  border:1px solid #625e5b;
+  border-radius:0;
+  line-height:1.5;
+  text-align:center;
+  text-wrap:balance;
+}

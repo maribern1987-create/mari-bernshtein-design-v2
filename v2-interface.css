@@ -1,0 +1,132 @@
+/* V2 shared interface: compact navigation, forms, credentials and pricing. */
+body.concept-mari .site-header {
+  --v2-header-open: 98px;
+  --v2-header-compact: 70px;
+  position: sticky; top: 0; z-index: 30;
+  height: var(--v2-header-open); transition: none;
+  background: color-mix(in srgb, var(--paper, #f8f5ef) 96%, white);
+  box-shadow: 0 2px 12px #3427350b;
+}
+body.concept-mari .site-header.is-compact { height: var(--v2-header-compact); }
+body.concept-mari .site-header .header-inner {
+  height: 100%; min-height: 0; padding-block: 8px;
+  grid-template-columns: minmax(0,1fr) auto auto;
+}
+body.concept-mari .site-header .mari-signature .logo { width: clamp(230px,25vw,365px); transition: width .2s ease; }
+body.concept-mari .site-header.is-compact .mari-signature .logo { width: clamp(190px,20vw,285px); }
+body.concept-mari .site-header .header-profession { transition: opacity .16s ease, max-width .2s ease; overflow: hidden; }
+body.concept-mari .site-header.is-compact .header-profession { opacity: 0; max-width: 0!important; margin: 0!important; }
+body.concept-mari .site-header #site-nav {
+  display: none; position: absolute; inset: calc(100% + 8px) 0 auto auto;
+  grid-area: auto; width: min(440px, calc(100vw - 28px)); max-height: min(72dvh, 650px);
+  overflow: auto; overscroll-behavior: contain; padding: 12px;
+  background: #fbf8f3; border: 1px solid #d4c5bc; border-radius: 12px;
+  box-shadow: 0 18px 44px #34273524; z-index: 4;
+}
+body.concept-mari .site-header #site-nav.open {
+  display: flex!important; flex-direction: column; align-items: stretch; gap: 2px;
+  inset: calc(100% + 8px) 0 auto auto; width: min(440px, calc(100vw - 28px));
+  max-height: min(72dvh, 650px); padding: 12px; overflow: auto;
+}
+body.concept-mari .site-header #site-nav > a,
+body.concept-mari .site-header #site-nav .nav-disclosure {
+  display: flex; width: 100%; min-height: 46px; justify-content: space-between;
+  align-items: center; padding: 9px 12px; border: 0; border-radius: 8px;
+  background: transparent; color: #382c37; text-align: start; text-decoration: none;
+  font: 600 15px/1.35 Manrope, sans-serif;
+}
+body.concept-mari .site-header #site-nav > a:hover,
+body.concept-mari .site-header #site-nav .nav-disclosure:hover,
+body.concept-mari .site-header #site-nav .nav-disclosure[aria-expanded="true"] { background: #eee5df; }
+body.concept-mari .site-header #site-nav .nav-dropdown { position: static; }
+body.concept-mari .site-header #site-nav .subnav,
+body.concept-mari .site-header #site-nav .topics-subnav {
+  position: static; width: auto; display: block; padding: 5px 8px 9px 13px;
+  border: 0; border-inline-start: 2px solid #b68d80; border-radius: 0;
+  background: transparent; box-shadow: none;
+}
+body.concept-mari .site-header #site-nav .subnav[hidden] { display: none!important; }
+body.concept-mari .site-header #site-nav .mega-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px 14px; }
+body.concept-mari .site-header #site-nav .mega-group h3 { margin: 0; }
+body.concept-mari .site-header #site-nav .mega-group h3 a { font: 600 16px/1.3 "Cormorant Garamond",Georgia,serif; padding: 7px 3px; }
+body.concept-mari .site-header #site-nav .mega-group ul { list-style: none; padding: 0; margin: 0; }
+body.concept-mari .site-header #site-nav .mega-group li a { display: block; min-height: 40px; padding: 8px 4px; font: 400 13px/1.35 Manrope,sans-serif; }
+body.concept-mari .site-header #site-nav .mega-guide { margin-top: 6px; padding-top: 8px; border-top: 1px solid #d7cbc5; }
+body.concept-mari .site-header #menu-toggle { grid-area: 1/3; }
+body.concept-mari .site-header .header-book { grid-area: 1/2; }
+body.concept-mari .main :is(.section,[id^="HM"]) { scroll-margin-top: 86px; }
+
+/* Prices retain semantic table headers while becoming readable cards on phones. */
+body.concept-mari .package-sheet { width: 100%; min-width: 0; overflow: visible; }
+body.concept-mari .format-table { width: 100%; table-layout: fixed; }
+body.concept-mari .format-table .format-price { white-space: normal; }
+body.concept-mari .format-table .separate-price { font-size: .78em; }
+body.concept-mari .format-table .package-saving { white-space: normal; }
+body.concept-mari .format-table tbody tr { background: #fcfaf7; }
+body.concept-mari .format-table tbody tr:nth-child(even) { background: #f5f0e9; }
+
+/* Demo form keeps its existing steps, labels, validation and no-send notice. */
+body.concept-mari #flow-dialog {
+  width: min(660px, calc(100vw - 24px)); max-width: 660px; max-height: min(88dvh, 820px);
+  padding: clamp(22px,4vw,36px); border: 1px solid #d7c8be; border-radius: 16px;
+  background: #fbf8f3; color: #302830; box-shadow: 0 24px 90px #24192340;
+  overflow: auto; overscroll-behavior: contain;
+}
+body.concept-mari #flow-dialog::backdrop { background: #24192378; backdrop-filter: blur(2px); }
+body.concept-mari #flow-dialog #flow-title { font: 600 clamp(28px,4vw,38px)/1.12 "Cormorant Garamond",Georgia,serif; color: #512f48; }
+body.concept-mari #flow-dialog .field { margin: 15px 0; }
+body.concept-mari #flow-dialog .field label { display: block; margin-bottom: 6px; font-weight: 600; }
+body.concept-mari #flow-dialog :is(input:not([type=checkbox]):not([type=radio]),textarea,select) {
+  width: 100%; min-height: 48px; padding: 11px 13px; border: 1px solid #b9aaa2; border-radius: 8px;
+  background: #fffdfa; color: #302830; font: 400 16px/1.45 Manrope,sans-serif;
+}
+body.concept-mari #flow-dialog textarea { min-height: 120px; resize: vertical; }
+body.concept-mari #flow-dialog :is(input,textarea,select):focus-visible { outline: 3px solid #895d75; outline-offset: 2px; border-color: #512f48; }
+body.concept-mari #flow-dialog .choice { margin: 17px 0; padding: 14px; border: 1px solid #d4c5bc; border-radius: 10px; background: #f7f1eb; }
+body.concept-mari #flow-dialog .booking-channels { display: flex; flex-wrap: wrap; gap: 8px; }
+body.concept-mari #flow-dialog .booking-channels label { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 7px 11px; border: 1px solid #d4c5bc; border-radius: 22px; background: #fffdfa; }
+body.concept-mari #flow-dialog .form-controls { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+body.concept-mari #flow-dialog .booking-demo,.v2-form-note { border-left: 3px solid #a45035; padding: 10px 13px; background: #f3eae1; border-radius: 0 7px 7px 0; }
+body.concept-mari #flow-dialog .err { display: block; color: #9b302b; font-size: .92em; margin-top: 5px; }
+body.concept-mari #flow-dialog .invalid { border-color: #9b302b!important; }
+
+/* Public preview gallery: compact, complete aspect ratios, accessible lightbox. */
+body.concept-mari .credential-gallery .media-rail.credential-rail { --credential-height: 170px!important; }
+body.concept-mari .credential-gallery .credential-rail .credentials-strip>.credential-page { height: var(--credential-height)!important; }
+body.concept-mari .credential-gallery .credential-page .credential-preview { width: calc(var(--doc-ratio,1) * var(--credential-height))!important; }
+body.concept-mari .credential-gallery .credential-page .credential-preview { cursor: zoom-in; border-radius: 5px; }
+body.concept-mari .credential-gallery .credential-page .credential-preview:focus-visible { outline: 3px solid #895d75; outline-offset: 4px; }
+body.concept-mari .credential-gallery .credentials-strip .credential-page .credential-preview img { border-radius: 4px; }
+body.concept-mari .v2-document-dialog { width: min(1100px,calc(100vw - 20px)); max-width: 1100px; height: min(92dvh,900px); max-height: 92dvh; padding: 0; border: 1px solid #d4c5bc; border-radius: 14px; background: #211c21; color: #fff; overflow: hidden; }
+body.concept-mari .v2-document-dialog::backdrop { background: #211c21c9; }
+.v2-document-viewer { height: 100%; display: grid; grid-template-rows: auto minmax(0,1fr) auto; }
+.v2-document-toolbar,.v2-document-controls { display: flex; gap: 9px; align-items: center; justify-content: space-between; padding: 10px 14px; background: #342a33; }
+.v2-document-toolbar strong { font: 600 16px/1.35 Manrope,sans-serif; }
+.v2-document-toolbar button,.v2-document-controls button { min-height: 42px; border: 1px solid #8e7d88; border-radius: 7px; background: transparent; color: white; }
+.v2-document-stage { min-height: 0; overflow: auto; display: grid; place-items: center; padding: 18px; touch-action: pan-x pan-y pinch-zoom; }
+.v2-document-stage img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; transition: width .15s ease; }
+.v2-document-dialog.is-zoomed .v2-document-stage { display: block; }
+.v2-document-dialog.is-zoomed .v2-document-stage img { max-width: none; max-height: none; width: min(180%,1400px); height: auto; margin: 0 auto; cursor: zoom-out; }
+.v2-document-controls span { text-align: center; font-size: 13px; }
+@media(max-width:680px) {
+ body.concept-mari .main :is(.section,[id^="HM"]) { scroll-margin-top: 84px; }
+ body.concept-mari .site-header { --v2-header-open: 84px; --v2-header-compact: 68px; }
+ body.concept-mari .site-header .header-inner { padding: 5px 12px; gap: 0 7px; }
+ body.concept-mari .site-header .mari-signature .logo { width: clamp(132px,39vw,190px); }
+ body.concept-mari .site-header.is-compact .mari-signature .logo { width: clamp(115px,33vw,160px); }
+ body.concept-mari .site-header .mari-signature .header-profession { opacity: 1; max-width: none!important; margin-top: 3px!important; font-size: 11px!important; }
+ body.concept-mari .site-header.is-compact .mari-signature .header-profession { opacity: 0; max-width: 0!important; }
+ body.concept-mari .site-header #site-nav.open { inset: calc(100% + 5px) 8px auto auto; width: min(430px,calc(100vw - 16px)); max-height: min(70dvh,calc(100dvh - 108px)); }
+ body.concept-mari .site-header #site-nav .mega-grid { grid-template-columns: 1fr; }
+ body.concept-mari .format-table tr { grid-template-columns: minmax(0,1fr) auto; }
+ body.concept-mari .format-table .format-price strong { font-size: clamp(22px,6vw,29px); }
+ body.concept-mari #flow-dialog { width: calc(100vw - 12px); max-height: calc(100dvh - 12px); padding: 20px 16px; border-radius: 13px; }
+ body.concept-mari .credential-gallery .media-rail.credential-rail { --credential-height: 145px!important; padding-inline: 20px; }
+ body.concept-mari .v2-document-dialog { width: calc(100vw - 12px); height: calc(100dvh - 12px); max-height: calc(100dvh - 12px); border-radius: 10px; }
+ .v2-document-toolbar,.v2-document-controls { padding: 8px; gap: 6px; }
+ .v2-document-toolbar button,.v2-document-controls button { padding: 7px 9px; font-size: 13px; }
+ .v2-document-dialog.is-zoomed .v2-document-stage img { width: 180%; }
+}
+@media(prefers-reduced-motion:reduce) {
+ body.concept-mari .site-header,body.concept-mari .site-header *,.v2-document-stage img { transition-duration: 0s!important; }
+}

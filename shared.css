@@ -1,0 +1,25 @@
+@font-face{font-family:"Cormorant Garamond";src:url("assets/fonts/CormorantGaramond-600.ttf") format("truetype");font-weight:600;font-display:swap}
+@font-face{font-family:Manrope;src:url("assets/fonts/Manrope-400.ttf") format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:Manrope;src:url("assets/fonts/Manrope-600.ttf") format("truetype");font-weight:600 900;font-display:swap}
+:root {
+  --cream:#f9f4ed; --aubergine:#4a2943; --forest:#232d2a;
+  --plum-material:url("media/936a3bc29919.webp");
+  --sage-material:url("media/86de1389a17e.webp");
+  --light-material:url("media/c32b4c26aca6.webp");
+}
+body {font-family:Manrope,Arial,sans-serif;background:var(--cream);color:var(--forest);font-size:16px}
+h1,h2,h3 {font-family:"Cormorant Garamond",Georgia,serif;font-weight:600}
+.site-header{background:var(--cream);border-bottom:1px solid #4a294330}
+.header-inner{max-width:1420px;padding:12px clamp(16px,3.4vw,58px);gap:clamp(12px,1.6vw,24px)}
+.logo img{width:clamp(126px,13vw,185px);height:auto;display:block}
+.nav{gap:clamp(10px,1.2vw,22px)}
+.nav>a,.nav .nav-disclosure{font-family:Manrope,Arial,sans-serif;font-size:15px}
+.site-header .primary, .primary{background:var(--aubergine);border-color:var(--aubergine);color:var(--cream)}
+.site-header .primary{border-radius:30px;padding:10px 20px}
+button,.button{font-family:inherit}
+:where(a,button,input,textarea,select,summary):focus-visible{outline:3px solid #4a2943;outline-offset:3px;box-shadow:0 0 0 6px #f9f4ed}
+.concept-portrait,.concept-about-photo{display:block;max-width:100%;height:auto}
+.concept-review-links{background:#f9f4ed;color:#232d2a;display:flex;gap:24px;align-items:center;justify-content:center;flex-wrap:wrap;padding:24px;font:16px/1.5 Manrope,Arial,sans-serif}
+.concept-review-links a{color:inherit}
+@media(max-width:600px){.header-inner{gap:8px;padding:8px 12px}.site-header .primary{font-size:14px;padding:8px 12px}.logo img{width:clamp(94px,28vw,145px)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}

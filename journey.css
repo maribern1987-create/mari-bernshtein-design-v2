@@ -1,0 +1,41 @@
+/* Дорожка на главной и в согласованном макете. */
+:is(#app .main #HM04, .journey) .route{position:relative;margin-top:26px;padding:72px 0 0;isolation:isolate}
+:is(#app .main #HM04, .journey) .vein{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1;overflow:visible}
+:is(#app .main #HM04, .journey) .vein path{fill:none;stroke-linecap:round}
+:is(#app .main #HM04, .journey) .edge{stroke:#2c1d2a;stroke-width:5;opacity:.65}
+:is(#app .main #HM04, .journey) .gold{stroke:var(--terracotta);stroke-width:2}
+:is(#app .main #HM04, .journey) .sign{position:absolute;top:0;color:#40253a;isolation:isolate;display:grid;place-items:center;width:80px;height:30px;font:600 20px/1 "Cormorant Garamond",Georgia,serif}
+:is(#app .main #HM04, .journey) .sign::before{content:"";position:absolute;z-index:-1;inset:0;background:#f3e4cf;clip-path:polygon(0 0,85% 0,100% 50%,85% 100%,0 100%)}
+:is(#app .main #HM04, .journey) .sign::after{content:"";position:absolute;top:100%;height:19px;width:50%;border-inline:2px solid #d2baa2}
+:is(#app .main #HM04, .journey) .start{left:0;padding-right:7px}
+:is(#app .main #HM04, .journey) .finish{right:0;padding-left:7px}
+:is(#app .main #HM04, .journey) .finish::before{transform:scaleX(-1)}
+:is(#app .main #HM04, .journey) .flowers{position:absolute;right:3px;top:-34px;width:45px;height:36px;color:var(--terracotta);overflow:visible}
+:is(#app .main #HM04, .journey) .flowers path{fill:none;stroke:currentColor;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
+:is(#app .main #HM04, .journey) .flowers use{transform-box:fill-box;transform-origin:center}
+@media(prefers-reduced-motion:no-preference){
+ :is(#app .main #HM04, .journey) .in-view .flowers use{animation:bloom 1.3s ease-out backwards}
+ :is(#app .main #HM04, .journey) .in-view .flowers use:nth-of-type(2){animation-delay:.14s}
+ :is(#app .main #HM04, .journey) .in-view .flowers use:nth-of-type(3){animation-delay:.24s}
+ @keyframes bloom{from{opacity:0;transform:translateY(9px) rotate(-14deg)}to{opacity:1;transform:none}}
+}
+:is(#app .main #HM04, .journey) ol{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.6vw,24px);padding:0;margin:0}
+:is(#app .main #HM04, .journey) li{position:relative;text-align:left;padding:13px 12px 15px;border-radius:2px 2px 2px 11px;background:linear-gradient(160deg,#43253963,#4a294352)}
+:is(#app .main #HM04, .journey) ol > li{border-left:1px solid #d7bfc376}
+:is(#app .main #HM04, .journey) .stop{position:absolute;top:-21px;left:50%;width:12px;height:12px;transform:translate(-50%,-50%) rotate(45deg);border:1px solid var(--terracotta);background:#4a2943;box-shadow:inset 0 0 0 3px #4a2943,inset 0 0 0 6px var(--terracotta)}
+:is(#app .main #HM04, .journey) h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;letter-spacing:normal;width:auto;color:#fff8ee;margin:0 0 12px;max-width:17ch;font-size:25px;line-height:1.08;text-wrap:wrap}
+:is(#app .main #HM04, .journey) p{margin:0;color:#fff8ee;font-size:14px;line-height:1.6}
+@media(max-width:800px){
+ :is(#app .main #HM04, .journey) .route{margin:22px auto 0;max-width:540px;padding:50px 0 57px}
+ :is(#app .main #HM04, .journey) ol{grid-template-columns:1fr;gap:12px;padding-left:44px}
+ :is(#app .main #HM04, .journey) li{text-align:left;padding:12px 13px}
+ :is(#app .main #HM04, .journey) h3, :is(#app .main #HM04, .journey) p{margin-left:0;max-width:none}
+ :is(#app .main #HM04, .journey) h3{margin-bottom:7px;font-size:27px}
+ :is(#app .main #HM04, .journey) .stop{left:-18px;top:24px}
+ :is(#app .main #HM04, .journey) .sign{left:0;width:62px;height:32px;font-size:18px;padding:0}
+ :is(#app .main #HM04, .journey) .start::before{clip-path:polygon(0 0,100% 0,100% 78%,50% 100%,0 78%)}
+ :is(#app .main #HM04, .journey) .finish{top:auto;bottom:0}
+ :is(#app .main #HM04, .journey) .finish::before{clip-path:polygon(50% 0,100% 22%,100% 100%,0 100%,0 22%);transform:none}
+ :is(#app .main #HM04, .journey) .finish::after{top:auto;bottom:100%}
+ :is(#app .main #HM04, .journey) .flowers{left:74px;top:-6px}
+}

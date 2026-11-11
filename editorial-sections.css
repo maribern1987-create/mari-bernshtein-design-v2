@@ -1,0 +1,202 @@
+/* One main page for Mari. Only HM04 and subsequent sections; no gallery internals. */
+body.concept-mari {
+  --ed-ink:#302c2f; --ed-plum:#4a2943; --ed-paper:#f9f4ed;
+  --ed-wash:#eee6e9; --ed-line:#cdbfc6; --ed-muted:#62575e;
+  --fp-ink:var(--ed-ink); --fp-plum:var(--ed-plum); --fp-paper:var(--ed-paper);
+}
+body.concept-mari .main :is(#HM04,#HM_CREDENTIALS,#HM05,#HM07_TEXT,#HM_SESSION,#HM06,#HM07_VIDEO,#HM11,#HM10,#HM09,#HM08,#HM12) {
+  padding:clamp(38px,4.1vw,60px) clamp(20px,5vw,72px);
+  color:var(--ed-ink); background:var(--ed-paper); border:0;
+}
+body.concept-mari .main :is(#HM04,#HM_CREDENTIALS,#HM05,#HM07_TEXT,#HM_SESSION,#HM06,#HM07_VIDEO,#HM11,#HM10,#HM09,#HM08,#HM12)>.inside {
+  width:min(1180px,100%); max-width:1180px; margin-inline:auto;
+}
+body.concept-mari .main :is(#HM04,#HM_CREDENTIALS,#HM05,#HM07_TEXT,#HM_SESSION,#HM06,#HM07_VIDEO,#HM11,#HM10,#HM09,#HM08,#HM12) h2 {
+  max-width:none; color:var(--ed-plum); margin:0 0 26px;
+  font:600 clamp(33px,3.35vw,48px)/1.08 "Cormorant Garamond",Georgia,serif; letter-spacing:-.025em;
+}
+body.concept-mari .main :is(#HM04,#HM_CREDENTIALS,#HM05,#HM07_TEXT,#HM_SESSION,#HM06,#HM07_VIDEO,#HM11,#HM10,#HM09,#HM08,#HM12) p {
+  color:var(--ed-ink); font-size:16px; line-height:1.6;
+}
+body.concept-mari .main :is(#HM04,#HM_CREDENTIALS,#HM05,#HM07_TEXT,#HM_SESSION,#HM06,#HM07_VIDEO,#HM11,#HM10,#HM09,#HM08,#HM12) a:not(.button) {color:var(--ed-plum)}
+body.concept-mari .main :is(#HM04,#HM_CREDENTIALS,#HM05,#HM07_TEXT,#HM_SESSION,#HM06,#HM07_VIDEO,#HM11,#HM10,#HM09,#HM08,#HM12) .prototype-note {color:var(--ed-muted);font-size:13px}
+body.concept-mari .main :is(#HM04,#HM05,#HM_SESSION,#HM06,#HM11,#HM10,#HM09,#HM08,#HM12) .quiet {
+  background:transparent; color:var(--ed-plum); border-color:#a28c9a; border-radius:4px;
+}
+body.concept-mari .main :is(#HM04,#HM05,#HM_SESSION,#HM06,#HM11,#HM10,#HM09,#HM08,#HM12) .primary {
+  background:var(--ed-plum);color:#fffaf5;border-color:var(--ed-plum);border-radius:4px;
+}
+/* A continuous, numbered route rather than four disconnected tiles. */
+body.concept-mari .main #HM04 {background:#eee7e9}
+body.concept-mari #HM04 .steps-compact {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;padding:0;isolation:isolate}
+body.concept-mari #HM04 .steps-compact::before {display:none}
+body.concept-mari #HM04 .step:nth-child(n) {
+  display:block;min-height:0;margin:0;padding:22px 22px 18px;border:0;border-top:2px solid #967786;
+  background:transparent;box-shadow:none;color:var(--ed-ink);position:relative;
+}
+body.concept-mari #HM04 .step:nth-child(n)+.step {border-left:1px solid #d4c5cc}
+body.concept-mari #HM04 .step b {display:block;margin:0 0 15px;color:#765569;font:600 32px/1 "Cormorant Garamond",Georgia,serif}
+body.concept-mari #HM04 .step:nth-child(n) h3 {color:var(--ed-plum);font:600 25px/1.08 "Cormorant Garamond",Georgia,serif;margin:0 0 12px;max-width:17ch}
+body.concept-mari #HM04 .step:nth-child(n) p {font-size:14px;line-height:1.6;color:var(--ed-ink);margin:0}
+/* The sections around the document/review galleries share the page's quiet surface. */
+body.concept-mari .main #HM_CREDENTIALS {padding-top:36px;padding-bottom:32px}
+body.concept-mari .main #HM07_TEXT,body.concept-mari .main #HM07_VIDEO {border-top:1px solid #e1d6dc}
+/* Methods are a navigable index with an explicit route to the complete list. */
+body.concept-mari .main #HM05 {background:#f0e9e9}
+body.concept-mari #HM05 .method-list {display:grid;grid-template-columns:1fr;max-width:none;gap:0}
+body.concept-mari #HM05 .method {
+  position:relative;display:grid;grid-template-columns:minmax(220px,.9fr) minmax(0,1.1fr) auto;
+  gap:25px;align-items:center;padding:23px 0;border:0;border-top:1px solid #cebec7;background:none;
+}
+body.concept-mari #HM05 .method h3 {grid-row:auto;margin:0;max-width:27ch;color:var(--ed-plum);font:600 26px/1.12 "Cormorant Garamond",Georgia,serif}
+body.concept-mari #HM05 .method p {margin:0;font-size:14px;line-height:1.6;max-width:49ch}
+body.concept-mari #HM05 .method a {font-size:13px;max-width:12ch;min-height:44px;display:flex;align-items:center;text-underline-offset:4px}
+body.concept-mari #HM05 .actions {margin-top:22px;margin-bottom:0}
+body.concept-mari #HM05 .actions>a {display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 22px;border:1px solid #967786;border-radius:4px;text-decoration:none;background:#faf6f1;font-size:14px;font-weight:600}
+/* A generous but compact meeting spread. Player remains in its own centred row. */
+body.concept-mari .main #HM_SESSION {background:#e9e4e5}
+body.concept-mari #HM_SESSION h2 {text-align:center}
+body.concept-mari #HM_SESSION .session-grid {grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:0 0 26px}
+body.concept-mari #HM_SESSION .session-grid>div {border:0;padding:22px 27px 20px;background:#f8f3ee}
+body.concept-mari #HM_SESSION .session-grid>div+div {border-left:1px solid #dbced4}
+body.concept-mari #HM_SESSION .session-grid h3 {color:var(--ed-plum);font:600 27px/1.08 "Cormorant Garamond",Georgia,serif;margin-bottom:13px}
+body.concept-mari #HM_SESSION .session-grid p {font-size:14px;margin:0}
+body.concept-mari #HM_SESSION>.inside>p {max-width:80ch;margin:0 auto 18px;text-align:center}
+body.concept-mari #HM_SESSION>.inside>.button {display:table;margin:18px auto}
+body.concept-mari #HM_SESSION .intro-film {max-width:760px;width:100%;margin:26px auto 0}
+body.concept-mari #HM_SESSION .intro-play {background:linear-gradient(100deg,#4a2943d9,#4a29439c),var(--plum-material) center/cover;color:#fffaf5}
+body.concept-mari #HM_SESSION .intro-film p {text-align:center}
+/* Price rows sit beside the practical explanation; the single meeting has emphasis. */
+body.concept-mari #HM06>.inside {display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);column-gap:64px;align-items:start}
+body.concept-mari #HM06 h2 {grid-column:1;grid-row:1;margin-bottom:18px}
+body.concept-mari #HM06>.inside>p {grid-column:1;margin:0 0 20px;max-width:42ch}
+body.concept-mari #HM06 .price-table {grid-column:2;grid-row:1/5;width:100%;max-width:none;margin:0;border:0;background:#f0e9ea}
+body.concept-mari #HM06 .price-table :is(td,th) {padding:17px 20px;border-color:#d4c4ce}
+body.concept-mari #HM06 .price-table th {font-size:12px;color:#6b5965;font-weight:400}
+body.concept-mari #HM06 .price-table td {font-size:15px}
+body.concept-mari #HM06 .price-table td:last-child {color:var(--ed-plum);font-size:22px;font-weight:600;font-family:"Cormorant Garamond",Georgia,serif}
+body.concept-mari #HM06 .price-table tbody tr:first-child {background:#e5d9df}
+body.concept-mari #HM06 .price-table tbody tr:first-child td:last-child {font-size:29px}
+body.concept-mari #HM06 .actions {grid-column:1;display:flex;gap:10px;margin:3px 0 0;align-items:flex-start}
+body.concept-mari #HM06 .actions .button {padding:10px 15px;font-size:13px}
+/* An invitation with the scale and intimacy of a personal note. */
+body.concept-mari .main #HM11 {background:#e8dce2}
+body.concept-mari #HM11>.inside {display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:64px;align-items:center}
+body.concept-mari #HM11 h2 {max-width:15ch;margin:0;font-size:clamp(36px,3.6vw,52px)}
+body.concept-mari #HM11 .appeal {max-width:none;padding:28px 32px;background:#faf6f1;border:0;border-left:3px solid #967786;box-shadow:0 6px 22px #4a294308}
+body.concept-mari #HM11 .appeal p {font-size:15px;line-height:1.6;margin-bottom:13px}
+body.concept-mari #HM11 .appeal .button {margin-top:8px}
+/* Publication is typographic: no anonymous landscape photograph. */
+body.concept-mari #HM10 .article-preview {display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:14px 52px;max-width:none;padding:26px 0;border:0;border-top:1px solid #bdabb6;border-bottom:1px solid #bdabb6;background:none}
+body.concept-mari #HM10 .article-preview::before {content:none;display:none;background:none}
+body.concept-mari #HM10 .article-preview h3 {grid-column:1;grid-row:1/3;margin:0;font:600 clamp(29px,3vw,42px)/1.08 "Cormorant Garamond",Georgia,serif;max-width:23ch}
+body.concept-mari #HM10 .article-preview p {grid-column:2;grid-row:1;margin:0;align-self:end}
+body.concept-mari #HM10 .article-preview .prototype-note {grid-column:2;grid-row:2;align-self:start}
+body.concept-mari #HM10 .actions {margin-top:16px;margin-bottom:0}
+/* The unfinished material remains visibly unfinished; motif is a blank folded sheet. */
+body.concept-mari .main #HM09 {background:#efe8e9}
+body.concept-mari #HM09 .resource {grid-template-columns:minmax(160px,.5fr) minmax(0,1.5fr);gap:42px;align-items:center;max-width:880px}
+body.concept-mari #HM09 .resource-preview {position:relative;isolation:isolate;min-height:210px;max-width:200px;width:100%;background:#faf6f1;border:1px solid #d5c4ce;border-radius:2px;box-shadow:6px 6px 0 #e0d4db,inset 5px 0 0 #d8c6d0}
+body.concept-mari #HM09 .resource-preview::before {content:"";position:absolute;inset:30px 25px;border:1px solid #c7b0bf;border-radius:50% 50% 2px 2px}
+body.concept-mari #HM09 .resource-preview::after {content:"";position:absolute;left:42px;right:42px;top:58%;height:1px;box-shadow:0 9px 0 #d5c4ce,0 18px 0 #d5c4ce;background:#d5c4ce}
+body.concept-mari #HM09 .resource h3 {font:600 27px/1.12 "Cormorant Garamond",Georgia,serif;color:var(--ed-plum)}
+/* FAQ takes the full reading width. The invitation remains a separate, quiet action. */
+body.concept-mari #HM08>.inside {display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:0 64px}
+body.concept-mari #HM08 h2 {grid-column:1;grid-row:1;max-width:16ch}
+body.concept-mari #HM08 .faq {grid-column:2;grid-row:1/4;max-width:none;border-color:#cdbbc6}
+body.concept-mari #HM08 .faq details {padding:9px 0;border-color:#cdbbc6}
+body.concept-mari #HM08 .faq summary {font:600 23px/1.2 "Cormorant Garamond",Georgia,serif;display:list-item;padding:9px 22px 9px 0;color:var(--ed-plum)}
+body.concept-mari #HM08 .faq p {font-size:14px;margin:4px 0 15px}
+body.concept-mari #HM08 .question-invite {grid-column:1;padding:18px 0 0;margin:0 0 12px;max-width:none;border-color:#d4c4ce}
+body.concept-mari #HM08 .question-invite h3 {font:600 25px/1.15 "Cormorant Garamond",Georgia,serif;max-width:21ch}
+body.concept-mari #HM08>.inside>a {grid-column:1;max-width:35ch;font-size:13px}
+body.concept-mari .main #HM12 {background:#e9e0e4;padding-block:34px}
+body.concept-mari #HM12>.inside {display:grid;grid-template-columns:1fr auto;gap:10px 40px;align-items:center}
+body.concept-mari #HM12 h2 {margin:0;font-size:35px}
+body.concept-mari #HM12 p {grid-column:1;margin:0;font-size:14px}
+body.concept-mari #HM12 .social-links {grid-column:2;grid-row:1/3;display:flex;gap:10px;margin:0;flex-wrap:wrap}
+body.concept-mari #HM12 .social-link {color:var(--ed-plum);border:1px solid #a28b9a;border-radius:4px;padding:10px 20px;font-size:14px}
+body.concept-mari .footer {background:#493443;color:#fffaf5;padding:34px clamp(20px,5vw,72px)}
+body.concept-mari .footer :is(h2,p,a,.small) {color:#fffaf5}
+body.concept-mari .footer h2 {font:600 25px/1.12 "Cormorant Garamond",Georgia,serif}
+@media(max-width:1000px) {
+ body.concept-mari #HM04 .steps-compact {grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.concept-mari #HM04 .step:nth-child(3) {border-left:0}
+ body.concept-mari #HM05 .method {grid-template-columns:minmax(190px,.9fr) minmax(0,1.1fr);gap:10px 30px}
+ body.concept-mari #HM05 .method a {grid-column:2;max-width:none}
+ body.concept-mari #HM06>.inside,body.concept-mari #HM11>.inside,body.concept-mari #HM08>.inside {column-gap:32px}
+ body.concept-mari #HM_SESSION .session-grid>div {padding:19px}
+}
+@media(max-width:700px) {
+ body.concept-mari .main :is(#HM04,#HM_CREDENTIALS,#HM05,#HM07_TEXT,#HM_SESSION,#HM06,#HM07_VIDEO,#HM11,#HM10,#HM09,#HM08,#HM12) {padding:34px 20px}
+ body.concept-mari .main :is(#HM04,#HM_CREDENTIALS,#HM05,#HM07_TEXT,#HM_SESSION,#HM06,#HM07_VIDEO,#HM11,#HM10,#HM09,#HM08,#HM12) h2 {font-size:35px;max-width:none;margin-bottom:22px}
+ body.concept-mari #HM04 .step:nth-child(n) {padding:19px 15px 21px 0}
+ body.concept-mari #HM04 .step:nth-child(even) {padding-left:18px}
+ body.concept-mari #HM04 .step:nth-child(n) h3 {font-size:24px}
+ body.concept-mari #HM_SESSION .session-grid {grid-template-columns:1fr;gap:0;margin-bottom:20px}
+ body.concept-mari #HM_SESSION .session-grid>div {padding:21px;border:0}
+ body.concept-mari #HM_SESSION .session-grid>div+div {border:0;border-top:1px solid #dbced4}
+ body.concept-mari #HM_SESSION h2,body.concept-mari #HM_SESSION>.inside>p {text-align:left}
+ body.concept-mari #HM_SESSION .intro-film {margin-top:22px}
+ body.concept-mari #HM06>.inside,body.concept-mari #HM11>.inside,body.concept-mari #HM08>.inside {display:block}
+ body.concept-mari #HM06 .price-table {margin:24px 0}
+ body.concept-mari #HM06>.inside>p {max-width:none}
+ body.concept-mari #HM11 .appeal {padding:23px}
+ body.concept-mari #HM11 h2 {max-width:23ch}
+ body.concept-mari #HM10 .article-preview {grid-template-columns:1fr;gap:15px;padding:22px 0}
+ body.concept-mari #HM10 .article-preview>* {grid-column:1;grid-row:auto}
+ body.concept-mari #HM10 .article-preview h3 {font-size:34px}
+ body.concept-mari #HM08 .question-invite {margin-top:25px}
+ body.concept-mari #HM08 .faq summary {font-size:24px}
+ body.concept-mari #HM12>.inside {display:block}
+ body.concept-mari #HM12 .social-links {margin-top:20px}
+}
+@media(max-width:480px) {
+ body.concept-mari #HM05 .method {display:block;padding:23px 0}
+ body.concept-mari #HM05 .method h3 {font-size:28px;margin-bottom:12px}
+ body.concept-mari #HM05 .method p {font-size:15px}
+ body.concept-mari #HM05 .method a {margin-top:5px}
+ body.concept-mari #HM09 .resource {grid-template-columns:70px minmax(0,1fr);gap:22px;align-items:start}
+ body.concept-mari #HM09 .resource-preview {min-height:110px;box-shadow:3px 3px 0 #e0d4db,inset 3px 0 0 #d8c6d0}
+ body.concept-mari #HM09 .resource-preview::before {inset:15px 12px}
+ body.concept-mari #HM09 .resource-preview::after {left:22px;right:22px}
+ body.concept-mari #HM06 .price-table :is(td,th) {padding:14px 13px}
+}
+@media(max-width:360px) {
+ body.concept-mari #HM04 .steps-compact {grid-template-columns:1fr}
+ body.concept-mari #HM04 .step:nth-child(n) {display:grid;grid-template-columns:28px 1fr;gap:14px;padding:18px 0;border-left:0}
+ body.concept-mari #HM04 .step b {font-size:26px;margin:0}
+}
+/* Explicitly override the inherited alternating-step number colour. */
+body.concept-mari #HM04 .step:nth-child(n) b {color:#765569}
+@media(max-width:600px) {
+ body.concept-mari #HM04 .steps-compact {grid-template-columns:1fr}
+ body.concept-mari #HM04 .step:nth-child(n) {display:grid;grid-template-columns:32px minmax(0,1fr);gap:16px;padding:18px 0;border-left:0;border-top:1px solid #cbb9c4}
+ body.concept-mari #HM04 .step:nth-child(n) h3 {max-width:none;font-size:26px;margin-bottom:8px}
+ body.concept-mari #HM04 .step:nth-child(n) p {font-size:14px;line-height:1.55}
+ body.concept-mari #HM04 .step b {font-size:27px;margin:0}
+}
+@media(max-width:600px) {
+ body.concept-mari #HM04 .step:nth-child(n)+.step {border-left:0}
+}
+body.concept-mari .main #HM04{background:linear-gradient(100deg,#f4edebd9,#e5d7e1aa),var(--light-material) center/cover}
+body.concept-mari #HM04 .steps-compact{gap:clamp(6px,.9vw,16px)}
+body.concept-mari #HM04 .step:nth-child(n){border:1px solid #c8b8c3;border-top:2px solid #997a8e;border-radius:2px 2px 2px 12px;background:linear-gradient(142deg,#fffaf3ee,#fffbf5b0 58%,#d9c8d553);box-shadow:0 2px 0 #bcaeb077;padding:clamp(14px,1.7vw,26px)}
+body.concept-mari .main #HM_SESSION{background:linear-gradient(110deg,#edebe1ee,#e7e3d7dd),var(--sage-material) center/cover}
+body.concept-mari #HM_SESSION .intro-frame .intro-play{background:linear-gradient(90deg,#31293189,#31293180),url('media/1d7e53f1705f.webp') center/cover}
+body.concept-mari #HM_SESSION .session-reading{text-align:center;margin:10px auto 0}
+body.concept-mari .main #HM06{background:linear-gradient(115deg,#24342fea,#323f37d9),var(--sage-material) center/cover}
+body.concept-mari .main #HM06 h2,body.concept-mari .main #HM06>.inside>p{color:#fcf7ed}
+body.concept-mari #HM06 .price-table{background:#faf5ed;color:#322834}
+body.concept-mari .main #HM06 .quiet{border:1px solid #ddcdd7;color:#fff8ef}
+body.concept-mari .main #HM06 .primary{background:#f4e9dc;border-color:#f4e9dc;color:#43293e}
+body.concept-mari .main #HM11{background:linear-gradient(95deg,#442a3fdd 0%,#41263bba 53%,#3d273ccf),url('media/f343fbb1a560.webp') center 49%/cover}
+body.concept-mari .main #HM11 h2{color:#fff5eb}
+body.concept-mari #HM11 .appeal{background:#fbf6f0f5;border-left:3px solid #b497a8}
+body.concept-mari #HM05 .method{padding-inline:clamp(10px,1.3vw,24px)}
+body.concept-mari #HM05 .method>a:after{content:'';position:absolute;inset:0}
+body.concept-mari #HM05 .method:is(:hover,:focus-within){background:#fbf7f1}
+body.concept-mari #HM10 .article-preview h3 a{text-decoration-thickness:1px;text-underline-offset:4px}
+@media(max-width:680px){body.concept-mari #HM10 .article-preview :is(h3,p){grid-column:1;grid-row:auto}
+body.concept-mari #HM04 .steps-compact{gap:7px}body.concept-mari #HM04 .step:nth-child(n){padding:14px 16px}body.concept-mari #HM04 .step:nth-child(n)+.step{border-left:1px solid #c8b8c3}}
+

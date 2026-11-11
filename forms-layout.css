@@ -1,0 +1,117 @@
+/* Layout only. Material colours and the common button system live in material-rhythm.css. */
+body.concept-mari #app .main #HM08>.inside{display:block}
+body.concept-mari #app .main #HM08 .faq-layout{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);grid-template-areas:"ask questions";gap:clamp(30px,5vw,72px);align-items:start}
+body.concept-mari #app .main #HM08 > .inside > h2 {
+  width:100%;max-width:none;text-align:center;margin:0 0 var(--faq-edge);
+}
+body.concept-mari #app .main #HM08 {
+  --faq-edge:clamp(24px,3vw,44px);padding-bottom:var(--faq-edge);
+}
+body.concept-mari #app .main #HM08 .faq-layout > .faq {
+  grid-area:questions;max-width:none;margin:0;
+}
+body.concept-mari #app .main #HM08 .faq-lead {
+  grid-area:ask;align-self:center;display:flex;flex-direction:column;align-items:flex-start;gap:16px;
+}
+body.concept-mari #app .main #HM08 .question-prompt {
+  max-width:26ch;margin:0;font:600 clamp(25px,2.2vw,31px)/1.13 "Cormorant Garamond",Georgia,serif;
+}
+body.concept-mari #app .main #HM08 .request-guide-link {margin:0}
+/* One framed invitation: heading, reading space, paragraph and the existing dialog action. */
+body.concept-mari #app .main #HM11>.inside{display:block}
+/* Интервалы вокруг формы задают соседние разделы. */
+body.concept-mari #app .main #HM11 {padding-block:0}
+body.concept-mari #app .main #HM11 .appeal{display:block;width:100%;max-width:980px;margin:auto;padding:clamp(26px,4vw,46px);border:1px solid var(--line,currentColor);border-radius:4px}
+body.concept-mari #app .main #HM11 .appeal h2{max-width:none;width:100%;margin:0 auto 30px;text-align:center}
+body.concept-mari #app .main #HM11 .appeal p{max-width:78ch;margin:0 auto 25px;line-height:1.65}
+body.concept-mari #app .main #HM11 .appeal .actions{display:flex;justify-content:center;align-items:center;margin:0;gap:12px}
+body.concept-mari #app .main #HM11 .appeal .actions .button{margin-top:0}
+body.concept-mari #app .main #HM11 {position:relative;z-index:1;overflow:visible}
+body.concept-mari #app .main #HM11 .appeal {
+  --note-edge:clamp(16px,3vw,34px);
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(255px,38%);
+  align-items:center;column-gap:clamp(20px,3.5vw,46px);padding-bottom:0;
+}
+body.concept-mari #app .main #HM11 .appeal-copy h2 {text-wrap:balance}
+.appeal-copy {padding-bottom:var(--note-edge)}
+.appeal-note {
+  position:relative;justify-self:end;align-self:start;width:100%;
+  margin:-22px calc(-.48 * var(--note-edge)) -14px 0;
+  transform:rotate(-2deg);filter:drop-shadow(1px 4px 4px #32233232);
+}
+.appeal-note img {display:block;width:100%;height:auto}
+@media(max-width:760px) {
+  body.concept-mari #app .main #HM11 .appeal {grid-template-columns:minmax(0,1fr)}
+  .appeal-copy {padding-bottom:8px}
+  .appeal-note {width:min(100%,290px);margin-top:10px;transform:rotate(-1.5deg)}
+  body.concept-mari #app .main #HM_SESSION {padding-top:max(46px,6vw)}
+}
+/* Обе тройки обрамляют форму и оформляются одинаково. */
+body.concept-mari #app .main :is(#HM_WHY,#HM_SESSION) {
+  --column-divider:#ab9099;
+  border-block:0;
+}
+body.concept-mari #app .main :is(#HM_WHY,#HM_SESSION) :is(.why-list,.session-grid) {
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;
+  align-items:stretch;padding:0;border:0;
+}
+body.concept-mari #app .main :is(#HM_WHY,#HM_SESSION) :is(.why-list,.session-grid)>div {
+  padding:6px clamp(16px,2vw,32px);border:0;background:transparent;text-align:center;
+}
+body.concept-mari #app .main :is(#HM_WHY,#HM_SESSION) :is(.why-list,.session-grid)>div+div {
+  border-inline-start:1px solid var(--column-divider);
+}
+body.concept-mari #app .main :is(#HM_WHY,#HM_SESSION) :is(.why-list,.session-grid)>div::before,
+body.concept-mari #app .main :is(#HM_WHY,#HM_SESSION) :is(.why-list,.session-grid)>div::after {content:none;display:none}
+body.concept-mari #app .main :is(#HM_WHY,#HM_SESSION) :is(.why-list,.session-grid)>div:nth-child(n) h3 {
+  font:600 clamp(27px,2.3vw,33px)/1.12 "Cormorant Garamond",Georgia,serif;
+  max-width:none;min-height:0;margin:0 auto 13px;text-align:center;
+}
+body.concept-mari #app .main :is(#HM_WHY,#HM_SESSION) :is(.why-list,.session-grid) p {
+  max-width:42ch;margin:0 auto;font-size:15px;line-height:1.6;text-align:center;
+}
+#HM_SESSION .session-duration {
+  display:block;margin-top:.14em;white-space:nowrap;
+}
+#HM_SESSION .duration-number {
+  font:normal .92em/1 Georgia,"Times New Roman",serif;font-variant-numeric:lining-nums;
+}
+/* Before: min(760px,100%). Now: exactly 75% of that width; play does not resize it. */
+body.concept-mari #app .main #HM_SESSION .session-film{width:75%;max-width:570px;margin-inline:auto}
+body.concept-mari #app .subpage .session-film{width:75%;margin-inline:auto}
+@media(max-width:760px){
+ body.concept-mari #app .main #HM_SESSION .session-film,
+ body.concept-mari #app .subpage .session-film{width:86.25%;max-width:none}
+ body.concept-mari #app .main #HM08 .faq-layout{grid-template-columns:minmax(0,1fr);grid-template-areas:"questions" "ask";gap:28px}
+ body.concept-mari #app .main :is(#HM_WHY,#HM_SESSION) :is(.why-list,.session-grid) {grid-template-columns:1fr}
+ body.concept-mari #app .main :is(#HM_WHY,#HM_SESSION) :is(.why-list,.session-grid)>div+div {
+   border:0;padding-top:44px;position:relative;
+ }
+ body.concept-mari #app .main :is(#HM_WHY,#HM_SESSION) :is(.why-list,.session-grid)>div+div::before {
+   content:"";display:block;position:absolute;left:50%;top:10px;width:1px;height:24px;
+   background:var(--column-divider);margin:0;padding:0;filter:none;opacity:1;
+ }
+ body.concept-mari #app .main #HM11 .appeal h2{margin-bottom:24px}
+}
+
+/* One editorial row: title, a quieter explanation, then the explicit reading action. */
+body.concept-mari #app .main #HM10 .article-preview{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr) auto;gap:20px;align-items:center;width:100%;padding-block:23px}
+body.concept-mari #app .main #HM10 .article-preview>*{grid-column:auto;grid-row:auto;align-self:center;margin:0;max-width:none}
+body.concept-mari #app .main #HM10 .article-preview h3{font:600 clamp(24px,2vw,29px)/1.15 "Cormorant Garamond",Georgia,serif}
+body.concept-mari #app .main #HM10 .article-preview p{font:400 14px/1.55 Manrope,Arial,sans-serif}
+body.concept-mari #app .main #HM10 .article-preview .article-read{justify-self:end;white-space:nowrap;margin:0}
+@media(max-width:700px){
+ body.concept-mari #app .main #HM10 .article-preview{grid-template-columns:1fr;gap:15px}
+ body.concept-mari #app .main #HM10 .article-preview h3{font-size:27px}
+ body.concept-mari #app .main #HM10 .article-preview .article-read{justify-self:end;margin:0}
+}
+/* Active site map only: one native disclosure contains the complete topic tree. */
+body.concept-mari #app .sitemap-topics{margin:22px 0 30px;border-block:1px solid var(--line,currentColor);padding:0}
+body.concept-mari #app .sitemap-topics>summary{min-height:56px;display:list-item;padding:13px 8px;cursor:pointer;font:600 clamp(26px,2.3vw,33px)/1.2 "Cormorant Garamond",Georgia,serif}
+body.concept-mari #app .sitemap-topics .sitemap-list{list-style:disc;margin:7px 0 14px;padding-left:24px}
+body.concept-mari #app .sitemap-topics>.sitemap-list{margin:5px 0 18px}
+body.concept-mari #app .sitemap-topics .sitemap-list li{margin:0}
+body.concept-mari #app .sitemap-topics .sitemap-list a{display:inline-flex;align-items:center;min-height:44px;max-width:100%;padding:6px 0;line-height:1.45;overflow-wrap:anywhere}
+body.concept-mari #app .sitemap-topics>.sitemap-list>li>.sitemap-list>li>a{font-weight:600}
+body.concept-mari #app .sitemap-topics :is(summary,a):focus-visible{outline:2px solid currentColor;outline-offset:3px}
+@media(max-width:600px){body.concept-mari #app .sitemap-topics .sitemap-list{padding-left:18px}}

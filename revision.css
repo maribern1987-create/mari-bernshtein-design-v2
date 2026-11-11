@@ -1,0 +1,63 @@
+/* Уточнения Мари: первый экран, равная сетка тем, видео и миниатюры. */
+body:is(.concept-a,.concept-b) .header-inner .logo img{display:block;width:clamp(200px,17.5vw,254px);height:auto;max-width:none}
+body:is(.concept-a,.concept-b) .header-inner .logo{flex:0 0 auto}
+body:is(.concept-a,.concept-b) #HM01 h1{max-width:none;font:600 clamp(44px,4.6vw,74px)/1.03 "Cormorant Garamond",Georgia,serif;letter-spacing:-.045em;margin:0 0 9px;white-space:nowrap}
+body:is(.concept-a,.concept-b) #HM01 .hero-role{margin:0 0 26px;white-space:nowrap;font:600 clamp(14px,1.4vw,18px)/1.4 Manrope,Arial,sans-serif;letter-spacing:.012em;color:#4a2943}
+body:is(.concept-a,.concept-b) #HM01 .lead,body:is(.concept-a,.concept-b) #HM01 .small{font:400 clamp(16px,1.32vw,19px)/1.53 Manrope,Arial,sans-serif;letter-spacing:0;max-width:53ch;color:#232d2a}
+body.concept-b #HM01{background-image:var(--plum-material);background-position:center;background-size:cover}
+body.concept-b #HM01 .hero-grid>div{background:#f9f4ed;max-width:100%;padding:clamp(24px,3.2vw,52px);border-radius:2px;color:#232d2a;box-shadow:0 12px 34px #28182324}
+body.concept-b #HM01 h1{color:#4a2943}
+body.concept-b #HM01 .hero-grid > div > p{color:#232d2a}
+body.concept-b #HM01 .hero-grid > div > .hero-role{color:#4a2943}
+body.concept-b #HM01 .button.primary{background:#4a2943;color:#fff;border-color:#4a2943}
+body.concept-b #HM01 .button.quiet{color:#4a2943;border-color:#8e7484}
+body.concept-a #HM01{background-color:#f9f4ed;background-image:linear-gradient(90deg,#f9f4ed 24%,#f9f4edea 78%,#f9f4edb8),var(--light-material);background-size:cover}
+body.concept-a #HM01 .concept-portrait{object-fit:cover;object-position:50% 43%;border-radius:46% 46% 3px 3px / 24% 24% 3px 3px}
+body.concept-a #HM02{background-image:linear-gradient(110deg,#402237d9,#49283f9e),var(--plum-material);background-size:cover}
+body:is(.concept-a,.concept-b) #HM02 h2{max-width:100%}
+body:is(.concept-a,.concept-b) #HM02 .home-topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.4vw,22px);border:none}
+body:is(.concept-a,.concept-b) #HM02 .home-topic-grid>.topic-card:nth-child(n){position:relative;grid-column:auto;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;align-self:stretch;margin:0;min-height:148px;padding:clamp(16px,1.9vw,28px) clamp(40px,3.2vw,54px) 22px clamp(15px,1.7vw,26px);border:1px solid #bba9ab;border-radius:14px;text-align:left;text-decoration:none;isolation:isolate;transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease;background:#f9f4ed;color:#382330;box-shadow:0 4px 10px #29172510;font:600 clamp(17px,1.36vw,21px)/1.28 Manrope,sans-serif}
+body.concept-a #HM02 .home-topic-grid>.topic-card:nth-child(3n+2){background:#f0e7ed}
+body.concept-a #HM02 .home-topic-grid>.topic-card:nth-child(3n){background:#e8ebe3}
+body.concept-b #HM02 .home-topic-grid>.topic-card:nth-child(n){border-radius:4px 18px 4px 4px;background:#fffaf4;border-color:#b9a9a8;border-inline-start:4px solid #765e6a}
+body.concept-b #HM02 .home-topic-grid>.topic-card:nth-child(3n+2){border-inline-start-color:#6b7164}
+body:is(.concept-a,.concept-b) #HM02 .home-topic-grid>.topic-card span{font:400 16px/1.45 Manrope,Arial,sans-serif;letter-spacing:0;color:#574c52;margin-top:8px}
+body:is(.concept-a,.concept-b) #HM02 .home-topic-grid>.topic-card::after{content:'';position:absolute;right:12px;top:14px;width:28px;height:28px;display:grid;place-items:center;background:#4a2943;color:#fff;border-radius:50%;font:17px/1 Arial}
+@media(hover:hover){
+ body:is(.concept-a,.concept-b) #HM02 .home-topic-grid>.topic-card:hover{transform:translateY(-4px);box-shadow:0 9px 22px #29172535;border-color:#765e6a}
+}
+body:is(.concept-a,.concept-b) #HM03 .about-halves{align-items:center}
+.intro-film{width:100%}.intro-frame,.intro-film video{width:100%;aspect-ratio:16/9;display:block;background:#232d2a;overflow:hidden;border-radius:4px}
+.intro-frame iframe{display:block;width:100%;height:100%;border:0}
+.intro-film video{height:auto;aspect-ratio:auto;max-height:68vh;object-fit:contain}
+.intro-frame .intro-play{width:100%;height:100%;display:flex;flex-direction:column;gap:14px;align-items:center;justify-content:center;background:linear-gradient(120deg,#232d2ae0,#4a2943cd),var(--sage-material) center/cover;color:#fff;font:600 clamp(17px,2vw,25px)/1.4 Manrope,sans-serif;border:0}
+.play-symbol{display:grid;place-content:center;padding-left:4px;width:60px;height:60px;border:1px solid #f9f4ed88;border-radius:50%;font-size:23px}
+.vk-link{display:inline-flex;align-items:center;min-height:44px;color:inherit;text-underline-offset:4px}
+.credentials-strip{display:flex!important;gap:12px;overflow-x:auto;overscroll-behavior-x:contain;align-items:center;width:100%;padding:12px 4px;scroll-snap-type:x proximity}
+.credentials-strip img{width:auto!important;max-width:125px!important;height:78px!important;flex:none;object-fit:contain;user-select:none;-webkit-user-drag:none;pointer-events:none;scroll-snap-align:start;opacity:.9}
+.strip-controls{display:flex;gap:8px;justify-content:flex-end}.strip-controls button{width:44px;height:44px;border-radius:50%}
+.screenshot-slot{position:relative;overflow:hidden}.screenshot-slot img{display:block;width:100%;height:100%;object-fit:contain}.review-zoom{position:absolute;right:6px;bottom:6px;border-radius:50%;background:#4a2943;color:white;width:30px;height:30px;display:grid;place-content:center}
+.review-original{display:block;max-width:100%;height:auto;margin:0 auto}
+.review-video-grid video{display:block;width:100%;aspect-ratio:9/16;object-fit:contain;background:#232d2a;border-radius:12px}
+body:is(.concept-a,.concept-b) #HM_SESSION .intro-film{max-width:760px;margin-top:30px}
+body:is(.concept-a,.concept-b) #HM_SESSION .intro-play{background:linear-gradient(112deg,#412a3bd9,#232d2ab8),var(--plum-material) center/cover}
+body:is(.concept-a,.concept-b) #HM09 .resource-preview{background:var(--sage-material) center/cover;border-radius:2px 16px 16px 2px;box-shadow:inset 8px 0 0 #232d2a45,5px 6px 0 #b4a9a1}
+body:is(.concept-a,.concept-b) #HM10 .article-preview{display:grid;grid-template-columns:minmax(150px,.75fr) minmax(0,1.3fr);gap:10px 26px;padding:0 0 22px;align-content:center;max-width:100%}
+body:is(.concept-a,.concept-b) #HM10 .article-preview::before{content:'';grid-area:1/1/4/2;min-height:166px;border-radius:3px 28px 3px 3px;background:url('media/5b32cedfb8db.webp') center/cover}
+body:is(.concept-a,.concept-b) #HM10 .article-preview>*{grid-column:2;grid-row:auto;align-self:center;margin:0}
+@media(max-width:600px){body:is(.concept-a,.concept-b) #HM10 .article-preview{display:block}body:is(.concept-a,.concept-b) #HM10 .article-preview::before{display:block;min-height:140px;margin-bottom:16px}body:is(.concept-a,.concept-b) #HM10 .article-preview>*{margin-bottom:8px}}
+@keyframes enter-block{from{transform:translateY(18px);opacity:.85}to{transform:none;opacity:1}}
+@media(prefers-reduced-motion:no-preference){.section.revision-arrive>.inside{animation:enter-block .58s cubic-bezier(.21,.7,.28,1) both}}
+@media(max-width:1150px){body:is(.concept-a,.concept-b) .header-inner .logo img{width:210px}}
+@media(min-width:701px) and (max-width:1024px){body.concept-b #HM01 .hero-grid{grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:20px}body.concept-b #HM01 h1{font-size:clamp(37px,4.8vw,49px)}}
+@media(max-width:700px){
+ body:is(.concept-a,.concept-b) #HM01 .hero-grid{display:flex;flex-direction:column;align-items:stretch;gap:20px}
+ body:is(.concept-a,.concept-b) #HM01 .hero-grid>div:first-child{display:block;order:0;width:100%}
+ body:is(.concept-a,.concept-b) #HM01 h1{font-size:clamp(34px,9.4vw,56px);white-space:nowrap}
+ body:is(.concept-a,.concept-b) #HM01 .hero-role{font-size:clamp(13px,3.6vw,16px);margin-bottom:18px}
+ body:is(.concept-a,.concept-b) #HM01 .concept-portrait{order:1;height:clamp(245px,70vw,390px);width:100%;max-width:100%;min-height:0;object-fit:cover;object-position:50% 32%;margin:0}
+ body.concept-b #HM01 .hero-grid>div{padding:24px 16px}
+ body:is(.concept-a,.concept-b) #HM02 .home-topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body:is(.concept-a,.concept-b) .header-inner .logo img{width:clamp(128px,40vw,200px)}
+}
+@media(max-width:470px){body:is(.concept-a,.concept-b) #HM02 .home-topic-grid{grid-template-columns:1fr}body:is(.concept-a,.concept-b) #HM02 .home-topic-grid>.topic-card:nth-child(n){min-height:96px}}
